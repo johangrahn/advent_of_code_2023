@@ -44,11 +44,5 @@ fn get_success(input: &str) -> Option<u32> {
         .count()
         == 0;
 
-    // if something {
-    //     Some(game_number)
-    // } else {
-    //     None
-    // }
-
     result.then_some(game_number)
 }
