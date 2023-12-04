@@ -9,7 +9,7 @@ use day2::day2;
 type DayFunction = fn(input: &str) -> (u32, u32);
 
 fn main() {
-    let day = 2;
+    let day = 1;
     let input = format!("input/{day}.txt");
     let input = read_to_string(input).unwrap();
     let mut day_functions: HashMap<i32, DayFunction> = HashMap::default();
