@@ -131,7 +131,7 @@ mod day2_tests {
         fn test_real_input() {
             let input = read_input(2);
             let result = part2(&input);
-            assert_eq!(result, 2207)
+            assert_eq!(result, 62241)
         }
     }
 }
