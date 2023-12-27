@@ -6,6 +6,9 @@ use day1::day1;
 mod day2;
 use day2::day2;
 
+mod day3;
+use day3::day3;
+
 type DayFunction = fn(input: &str) -> (u32, u32);
 
 fn main() {
@@ -15,6 +18,7 @@ fn main() {
     let mut day_functions: HashMap<i32, DayFunction> = HashMap::default();
     day_functions.insert(1, day1);
     day_functions.insert(2, day2);
+    day_functions.insert(3, day3);
 
     let result = day_functions.get(&day).unwrap()(&input);
 
