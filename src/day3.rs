@@ -61,18 +61,20 @@ fn part1(input: &str) -> u32 {
 
     let length = data[0].len();
 
-    set.iter()
+    set.into_iter()
         .map(|(y, x)| {
-            let mut stop = *x;
+            let mut stop = x;
 
             while stop < length
-                && mapper.get(&(*y, stop)).is_some()
-                && mapper.get(&(*y, stop)).unwrap().is_ascii_digit()
+                && mapper
+                    .get(&(y, stop))
+                    .map(|position| position.is_ascii_digit())
+                    .unwrap_or(false)
             {
                 stop += 1;
             }
 
-            String::from_iter(data[*y][*x..stop].to_vec())
+            String::from_iter(data[y][x..stop].to_vec())
                 .parse::<u32>()
                 .unwrap()
         })
